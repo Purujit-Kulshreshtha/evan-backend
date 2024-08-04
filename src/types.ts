@@ -1,12 +1,12 @@
 export type User = {
   name: string;
-  socketId: string;
+  socketId?: string;
 };
 
 export type Game = {
   roomCode: string;
   host: User;
-  players: User[];
+  players: Record<string, string>;
   status: GameStatus;
   config: GameConfig;
 };
@@ -17,7 +17,7 @@ export type GameConfig = {
   flafs: number;
 };
 
-enum GameStatus {
+export enum GameStatus {
   WAITING_FOR_PLAYERS,
   PREPARING,
   IN_PROGRESS,
