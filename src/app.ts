@@ -56,7 +56,7 @@ const joinGame = (
   }
 
   const updatedPlayers = game.players;
-  updatedPlayers[socket.id] = player.name;
+  updatedPlayers[socket.id] = player;
 
   const updatedGame: Game = {
     ...game,
